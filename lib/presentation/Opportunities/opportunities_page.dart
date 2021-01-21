@@ -12,7 +12,7 @@ class _OpportunitiesPageState extends State<OpportunitiesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: Text('Opportunities  Page'),
         centerTitle: true,
       ),
     );

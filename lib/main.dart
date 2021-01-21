@@ -19,8 +19,7 @@ class Minhaa extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       onGenerateRoute: MonRouter.onGenerateRoute,
-      initialRoute: opprtunitesRoute,
-
+      initialRoute: homeRoute,
     );
   }
 }
