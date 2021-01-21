@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:minhaa/presentation/Opportunities/opportunities_page.dart';
+import 'package:minhaa/router/route-constants.dart';
+import 'package:minhaa/router/route.dart';
 
 void main() {
   runApp(Minhaa());
@@ -17,14 +18,15 @@ class Minhaa extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: OpportunitiesPage()
+      onGenerateRoute: MonRouter.onGenerateRoute,
+      initialRoute: opprtunitesRoute,
+
     );
   }
 }
 
-
-// Architure 
+// Architure
 /* 
 
 
-*/   
+*/
