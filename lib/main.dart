@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:minhaa/router/route-constants.dart';
 import 'package:minhaa/router/mon_route.dart';
+import 'package:minhaa/values/branding_color.dart';
 
 void main() {
   runApp(Minhaa());
@@ -15,12 +16,11 @@ class Minhaa extends StatelessWidget {
       title: 'Minhaa',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: brandingColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-
       onGenerateRoute: MonRouter.onGenerateRoute,
-      initialRoute: homeRoute,
+      initialRoute: signInRoute,
     );
   }
 }

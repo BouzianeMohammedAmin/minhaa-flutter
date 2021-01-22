@@ -44,48 +44,64 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color: this._selectedIndex == 0 ? Colors.blue : Colors.grey,
+              color: this._selectedIndex == 0
+                  ? Theme.of(context).primaryColor
+                  : Colors.grey,
             ),
             title: Text(
               'Opportunities',
               style: TextStyle(
-                color: this._selectedIndex == 0 ? Colors.blue : Colors.grey,
+                color: this._selectedIndex == 0
+                    ? Theme.of(context).primaryColor
+                    : Colors.grey,
               ),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.favorite,
-              color: this._selectedIndex == 1 ? Colors.blue : Colors.grey,
+              color: this._selectedIndex == 1
+                  ? Theme.of(context).primaryColor
+                  : Colors.grey,
             ),
             title: Text(
               'Favorites',
               style: TextStyle(
-                color: this._selectedIndex == 1 ? Colors.blue : Colors.grey,
+                color: this._selectedIndex == 1
+                    ? Theme.of(context).primaryColor
+                    : Colors.grey,
               ),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.chat,
-              color: this._selectedIndex == 2 ? Colors.blue : Colors.grey,
+              color: this._selectedIndex == 2
+                  ? Theme.of(context).primaryColor
+                  : Colors.grey,
             ),
             title: Text(
               'Fourms',
               style: TextStyle(
-                color: this._selectedIndex == 2 ? Colors.blue : Colors.grey,
+                color: this._selectedIndex == 2
+                    ? Theme.of(context).primaryColor
+                    : Colors.grey,
               ),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person,
-              color: this._selectedIndex == 3 ? Colors.blue : Colors.grey,
+              color: this._selectedIndex == 3
+                  ? Theme.of(context).primaryColor
+                  : Colors.grey,
             ),
             title: Text(
               'Account',
               style: TextStyle(
-                color: this._selectedIndex == 3 ? Colors.blue : Colors.grey,
+                color: this._selectedIndex == 3
+                    ? Theme.of(context).primaryColor
+                    : Colors.grey,
               ),
             ),
           ),
