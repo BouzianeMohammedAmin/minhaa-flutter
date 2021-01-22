@@ -13,15 +13,20 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   PageController _pageController = new PageController();
-
-  List<Widget> _screens = [
+  int _selectedIndex = 0;
+  final List<Widget> _screens = [
+    //final we donot change it :)
     OpportunitiesPage(),
     FavoritiesPage(),
     QuestionsPage(),
     AccountPage(),
   ];
+
   void _onTapedItem(index) {
     _pageController.jumpToPage(index);
+    setState(() {
+      this._selectedIndex = index;
+    });
   }
 
   @override
@@ -33,24 +38,56 @@ class _HomePageState extends State<HomePage> {
         controller: _pageController,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
+        type: BottomNavigationBarType.fixed, // fix problem of 4 elemnt
         onTap: _onTapedItem,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            title: Text('Opportunities'),
+            icon: Icon(
+              Icons.home,
+              color: this._selectedIndex == 0 ? Colors.blue : Colors.grey,
+            ),
+            title: Text(
+              'Opportunities',
+              style: TextStyle(
+                color: this._selectedIndex == 0 ? Colors.blue : Colors.grey,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
-            title: Text('Favorites'),
+            icon: Icon(
+              Icons.favorite,
+              color: this._selectedIndex == 1 ? Colors.blue : Colors.grey,
+            ),
+            title: Text(
+              'Favorites',
+              style: TextStyle(
+                color: this._selectedIndex == 1 ? Colors.blue : Colors.grey,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            title: Text('Fourms'),
+            icon: Icon(
+              Icons.chat,
+              color: this._selectedIndex == 2 ? Colors.blue : Colors.grey,
+            ),
+            title: Text(
+              'Fourms',
+              style: TextStyle(
+                color: this._selectedIndex == 2 ? Colors.blue : Colors.grey,
+              ),
+            ),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            title: Text('Account'),
+            icon: Icon(
+              Icons.person,
+              color: this._selectedIndex == 3 ? Colors.blue : Colors.grey,
+            ),
+            title: Text(
+              'Account',
+              style: TextStyle(
+                color: this._selectedIndex == 3 ? Colors.blue : Colors.grey,
+              ),
+            ),
           ),
         ],
       ),

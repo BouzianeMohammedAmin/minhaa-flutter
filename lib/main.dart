@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minhaa/router/route-constants.dart';
-import 'package:minhaa/router/route.dart';
+import 'package:minhaa/router/mon_route.dart';
 
 void main() {
   runApp(Minhaa());
@@ -18,6 +18,7 @@ class Minhaa extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+
       onGenerateRoute: MonRouter.onGenerateRoute,
       initialRoute: homeRoute,
     );
