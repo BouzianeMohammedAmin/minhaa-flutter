@@ -16,7 +16,7 @@ class Minhaa extends StatelessWidget {
       title: 'Minhaa',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: brandingColor,
+        primarySwatch: brandingPrimaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       onGenerateRoute: MonRouter.onGenerateRoute,

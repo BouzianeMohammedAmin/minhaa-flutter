@@ -3,6 +3,7 @@ import 'package:minhaa/presentation/Opportunities/opportunities_page.dart';
 import 'package:minhaa/presentation/auth/account_page.dart';
 import 'package:minhaa/presentation/favorites/favorities_page.dart';
 import 'package:minhaa/presentation/forum/question_page.dart';
+import 'package:minhaa/values/branding_color.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -44,15 +45,14 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              color: this._selectedIndex == 0
-                  ? Theme.of(context).primaryColor
-                  : Colors.grey,
+              color:
+                  this._selectedIndex == 0 ? brandingPrimaryColor : Colors.grey,
             ),
             title: Text(
               'Opportunities',
               style: TextStyle(
                 color: this._selectedIndex == 0
-                    ? Theme.of(context).primaryColor
+                    ? brandingPrimaryColor
                     : Colors.grey,
               ),
             ),
@@ -60,15 +60,14 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.favorite,
-              color: this._selectedIndex == 1
-                  ? Theme.of(context).primaryColor
-                  : Colors.grey,
+              color:
+                  this._selectedIndex == 1 ? brandingPrimaryColor : Colors.grey,
             ),
             title: Text(
               'Favorites',
               style: TextStyle(
                 color: this._selectedIndex == 1
-                    ? Theme.of(context).primaryColor
+                    ? brandingPrimaryColor
                     : Colors.grey,
               ),
             ),
@@ -76,15 +75,14 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.chat,
-              color: this._selectedIndex == 2
-                  ? Theme.of(context).primaryColor
-                  : Colors.grey,
+              color:
+                  this._selectedIndex == 2 ? brandingPrimaryColor : Colors.grey,
             ),
             title: Text(
               'Fourms',
               style: TextStyle(
                 color: this._selectedIndex == 2
-                    ? Theme.of(context).primaryColor
+                    ? brandingPrimaryColor
                     : Colors.grey,
               ),
             ),
@@ -92,15 +90,14 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.person,
-              color: this._selectedIndex == 3
-                  ? Theme.of(context).primaryColor
-                  : Colors.grey,
+              color:
+                  this._selectedIndex == 3 ? brandingPrimaryColor : Colors.grey,
             ),
             title: Text(
               'Account',
               style: TextStyle(
                 color: this._selectedIndex == 3
-                    ? Theme.of(context).primaryColor
+                    ? brandingPrimaryColor
                     : Colors.grey,
               ),
             ),

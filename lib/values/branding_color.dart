@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-const MaterialColor brandingColor = MaterialColor(
+const MaterialColor brandingPrimaryColor = MaterialColor(
   _brandingPrimaryColor,
   <int, Color>{
     50: Color.fromRGBO(7, 94, 84, 0.1),
