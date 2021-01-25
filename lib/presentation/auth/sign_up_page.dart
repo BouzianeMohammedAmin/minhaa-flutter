@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minhaa/application/models/sign_up_furm_model.dart';
+import 'package:minhaa/application/models/auth/sign_up_furm_model.dart';
 import 'package:minhaa/router/route-constants.dart';
 import 'package:minhaa/values/branding_color.dart';
 import 'package:minhaa/values/images.dart';
@@ -38,22 +38,21 @@ class _SignUpPageState extends State<SignUpPage> {
           return SingleChildScrollView(
             child: Column(
               children: [
-                _buildSizeBox(50),
+                _buildSizeBox(30),
                 Container(
                   height: 250,
                   child: Center(
                     child: Image.asset(Images.logo),
                   ),
                 ),
-                _buildSizeBox(50),
                 StateBuilder<SignUpFurmModel>(
                   builder: (context, signUpFurmModel) {
                     return Padding(
                       padding: const EdgeInsets.only(left: 10, right: 10),
                       child: TextField(
-                        onChanged: (String fullName) {
+                        onChanged: (String firstName) {
                           signUpFurmModel.setState(
-                            (state) => state.setFullName(fullName),
+                            (state) => state.setFirstName(firstName),
                             catchError: true,
                           );
                         },
@@ -61,11 +60,11 @@ class _SignUpPageState extends State<SignUpPage> {
                           errorText: signUpFurmModel.hasError
                               ? signUpFurmModel.error.message
                               : null,
-                          //border: InputBorder.none,
+                          border: InputBorder.none,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
-                          hintText: 'Enter your full name',
+                          hintText: 'Enter your first name',
                           hintStyle: TextStyle(
                             fontSize: 20,
                           ),
@@ -78,7 +77,40 @@ class _SignUpPageState extends State<SignUpPage> {
                     );
                   },
                 ),
-                _buildSizeBox(20),
+                _buildSizeBox(10),
+                StateBuilder<SignUpFurmModel>(
+                  builder: (context, signUpFurmModel) {
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      child: TextField(
+                        onChanged: (String lastName) {
+                          signUpFurmModel.setState(
+                            (state) => state.setLastName(lastName),
+                            catchError: true,
+                          );
+                        },
+                        decoration: InputDecoration(
+                          errorText: signUpFurmModel.hasError
+                              ? signUpFurmModel.error.message
+                              : null,
+                          border: InputBorder.none,
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          hintText: 'Enter your last name',
+                          hintStyle: TextStyle(
+                            fontSize: 20,
+                          ),
+                          prefixIcon: Icon(
+                            Icons.person,
+                            size: 30,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                _buildSizeBox(10),
                 StateBuilder<SignUpFurmModel>(
                   builder: (context, signUpFurmModel) {
                     return Padding(
@@ -94,7 +126,7 @@ class _SignUpPageState extends State<SignUpPage> {
                           errorText: signUpFurmModel.hasError
                               ? signUpFurmModel.error.message
                               : null,
-                          //border: InputBorder.none,
+                          border: InputBorder.none,
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                           ),
@@ -111,7 +143,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     );
                   },
                 ),
-                _buildSizeBox(20),
+                _buildSizeBox(10),
                 StateBuilder<SignUpFurmModel>(
                   builder: (context, signUpFurmModel) {
                     return Padding(
@@ -143,7 +175,40 @@ class _SignUpPageState extends State<SignUpPage> {
                     );
                   },
                 ),
-                _buildSizeBox(20),
+                _buildSizeBox(10),
+                StateBuilder<SignUpFurmModel>(
+                  builder: (context, signUpFurmModel) {
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 10, right: 10),
+                      child: TextField(
+                        onChanged: (ps) {
+                          signUpFurmModel.setState(
+                              (s) => s.setConfirmPassword(ps),
+                              catchError: true);
+                        },
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          errorText: signUpFurmModel.hasError
+                              ? signUpFurmModel.error.message
+                              : null,
+                          enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          hintText: 'Enter your password confirmation',
+                          hintStyle: TextStyle(
+                            fontSize: 20,
+                          ),
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            size: 30,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                _buildSizeBox(10),
                 StateBuilder(
                   models: [_singletonSignUpFurmModel],
                   builder: (context, model) {
@@ -178,12 +243,11 @@ class _SignUpPageState extends State<SignUpPage> {
                     );
                   },
                 ),
-                _buildSizeBox(20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "Don't have an account?",
+                      "You  have an account?",
                       style: TextStyle(
                         fontSize: 18,
                       ),

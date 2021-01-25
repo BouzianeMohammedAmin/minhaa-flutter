@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minhaa/application/models/sign_in_furm_model.dart';
+import 'package:minhaa/application/models/auth/sign_in_furm_model.dart';
 import 'package:minhaa/router/route-constants.dart';
 import 'package:minhaa/values/branding_color.dart';
 import 'package:minhaa/values/images.dart';
@@ -121,6 +121,10 @@ class _SignInPpageState extends State<SignInPpage> {
                             content: Text('Your inputs  is invalide  '),
                             backgroundColor: Colors.red,
                           ));
+                        } else {
+                          //submitSigbIn
+                          _singletonSignInFurmModel
+                              .setState((state) => state.submitSigbIn());
                         }
                       },
                       child: Container(
